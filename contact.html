@@ -36,23 +36,16 @@
         section {
             padding: 2em;
         }
-        .scrollable-calendar {
-            max-height: 300px; /* A naptár maximális magassága */
-            overflow-y: auto; /* Görgethetőség engedélyezése, ha a tartalom túl nagy a naptárban */
-            border: 1px solid #ccc; /* Keret a naptár körül */
-            border-radius: 5px; /* Kerekített sarkok a naptár körül */
-            padding: 10px; /* Belső tér a naptár körül */
+       }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse; /* A táblázatkeret összeomlása */
         }
-   }
-        .day-square {
-            width: calc(100% / 7); /* Az egyes napok négyzetének szélessége (a héten 7 nap van) */
-            height: 80px; /* A négyzetek magassága */
-            border: 1px solid #ccc; /* Keret a négyzetek körül */
-            display: inline-block;
-            box-sizing: border-box;
-            padding: 5px;
-            margin-right: -4px; /* A margók szélességének kiegyenlítése */
-            margin-bottom: -1px; /* A margók szélességének kiegyenlítése */
+        .calendar-table th,
+        .calendar-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
         }
     </style>
 </head>
@@ -67,17 +60,33 @@
         <a href="contact.html">Kapcsolat</a>
     </nav>
     <section>
-        <h2>Naptár</h2>
-        <div class="scrollable-calendar">
-            <!-- Ide jön a naptár tartalma -->
-            <div class="day-square">Hétfő<br>Csirke</div>
-            <div class="day-square">Kedd<br>Rizs</div>
-            <div class="day-square">Szerda<br>Barack</div>
-            <div class="day-square">Csütörtök<br>Csípős csirke</div>
-            <div class="day-square">Péntek<br>Barack</div>
-            <div class="day-square">Szombat<br>Osztály fotózás</div>
-            <div class="day-square">Vasárnap<br>Fekete</div>
-        </div>
+        <h2>Június Naptár</h2>
+        <table class="calendar-table">
+            <thead>
+                <tr>
+                    <th>Hétfő</th>
+                    <th>Kedd</th>
+                    <th>Szerda</th>
+                    <th>Csütörtök</th>
+                    <th>Péntek</th>
+                    <th>Szombat</th>
+                    <th>Vasárnap</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ide jönnek a naptári napok -->
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+                <!-- további sorok és oszlopok -->
+            </tbody>
+        </table>
     </section>
 </body>
 </html>
