@@ -66,20 +66,20 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- A JavaScript által generált tartalom itt fog megjelenni -->
-            </tbody>
-        </table>
-    </section>
-
+                
     <script>
-        // Naptár generálása
+       // Naptár generálása
         var tableBody = document.querySelector('#calendar tbody');
         var currentDate = new Date();
         var year = currentDate.getFullYear();
-        var month = currentDate.getMonth();
+        var month = 5; // Június (0-indexed, tehát 5 = Június)
         var daysInMonth = new Date(year, month + 1, 0).getDate();
-        var firstDayOfWeek = new Date(year, month, 1).getDay();
+        var firstDayOfWeek = new Date(year, month, 1).getDay(); // Június 1-je napja
         var currentDay = currentDate.getDate(); // Aktuális nap lekérése
+
+        // Az első nap indexe, ahol 0 = vasárnap, 1 = hétfő, ..., 6 = szombat
+        // Mivel 2024 június 1-je szombatra esik, így ez 6 lesz
+        firstDayOfWeek = (firstDayOfWeek + 6) % 7; // Június 1-e szombat, ezért ez 6 lesz
 
         var dayCounter = 1;
         for (var i = 0; i < 6; i++) { // Maximum 6 sor
