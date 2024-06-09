@@ -7,23 +7,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #4CAF50;
+        .hero {
+            background-image: url('images/fodrasz-szalon.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             color: white;
             text-align: center;
-            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         nav ul {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7);
             overflow: hidden;
             color: white;
             padding: 0;
             text-align: center;
             margin: 0;
+            list-style-type: none;
         }
         nav ul li {
             display: inline;
@@ -36,6 +42,7 @@
         }
         section {
             padding: 2em;
+            text-align: center;
         }
         footer {
             background-color: #333;
@@ -46,18 +53,16 @@
             bottom: 0;
             width: 100%;
         }
-        img {
-            width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Üdvözöljük a Fodrász Szalonban!</h1>
-        <p>Legyen része a stílusunknak!</p>
-    </header>
-    
+    <div class="hero">
+        <header>
+            <h1>Üdvözöljük a Fodrász Szalonban!</h1>
+            <p>Legyen része a stílusunknak!</p>
+        </header>
+    </div>
+
     <nav>
         <ul>
             <li><a href="index.html">Kezdőlap</a></li>
@@ -73,11 +78,6 @@
         <p>Kezdje el az oldalunk felfedezését és ismerje meg fodrász szalonunkat!</p>
         <a href="about.html">Tovább</a>
     </section>
-    
-    <!-- Kép beillesztése -->
-    <img src="images/fodrasz-szalon.jpg" alt="Fodrász Szalon">
-    
-    <!-- További tartalom hozzáadása, mint például kedvezmények, legújabb trendek stb. -->
     
     <footer>
         <p>&copy; 2024 Fodrász Szalon. Minden jog fenntartva.</p>
