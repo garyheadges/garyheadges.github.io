@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rólunk</title>
     <style>
-        body {
+        body 
+        font-family: Arial, sans-serif;
+        }
+        #calendar {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+          body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0;
@@ -39,17 +47,40 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Rólunk</h1>
-    </header>
-    <nav>
-        <a href="index.html">Kezdőlap</a>
-        <a href="about.html">Rólunk</a>
-        <a href="services.html">Szolgáltatások</a>
-        <a href="contact.html">Kapcsolat</a>
-    </nav>
-    <section>
-        <p>Ez a Rólunk oldal. Itt található információ rólunk és a cégünkről.</p>
-    </section>
+    <h1>Google Naptár Integráció</h1>
+    <div id="calendar"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        function start() {
+            gapi.client.init({
+                'apiKey': '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',
+                'clientId': ' 958992867198-prr7jqjdh2lbfmrmmhcfgd3e9eujgm7j.apps.googleusercontent.com',
+                'scope': 'https://www.googleapis.com/auth/calendar.readonly',
+                'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
+            }).then(function() {
+                return gapi.client.calendar.events.list({
+                    'calendarId': 'primary',
+                    'timeMin': (new Date()).toISOString(),
+                    'showDeleted': false,
+                    'singleEvents': true,
+                    'maxResults': 10,
+                    'orderBy': 'startTime'
+                });
+            }).then(function(response) {
+                var events = response.result.items;
+                if (events.length > 0) {
+                    var calendarDiv = document.getElementById('calendar');
+                    events.forEach(function(event) {
+                        var eventDiv = document.createElement('div');
+                        eventDiv.textContent = event.summary + ' (' + event.start.dateTime + ')';
+                        calendarDiv.appendChild(eventDiv);
+                    });
+                } else {
+                    document.getElementById('calendar').textContent = 'Nincsenek események.';
+                }
+            });
+        }
+        gapi.load('client:auth2', start);
+    </script>
 </body>
 </html>
