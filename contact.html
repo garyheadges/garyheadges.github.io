@@ -43,6 +43,17 @@
             border-radius: 5px; /* Kerekített sarkok a naptár körül */
             padding: 10px; /* Belső tér a naptár körül */
         }
+   }
+        .day-square {
+            width: calc(100% / 7); /* Az egyes napok négyzetének szélessége (a héten 7 nap van) */
+            height: 80px; /* A négyzetek magassága */
+            border: 1px solid #ccc; /* Keret a négyzetek körül */
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 5px;
+            margin-right: -4px; /* A margók szélességének kiegyenlítése */
+            margin-bottom: -1px; /* A margók szélességének kiegyenlítése */
+        }
     </style>
 </head>
 <body>
@@ -56,35 +67,16 @@
         <a href="contact.html">Kapcsolat</a>
     </nav>
     <section>
-       <h2>Naptár</h2>
+        <h2>Naptár</h2>
         <div class="scrollable-calendar">
             <!-- Ide jön a naptár tartalma -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Hétfő</th>
-                        <th>Kedd</th>
-                        <th>Szerda</th>
-                        <th>Csütörtök</th>
-                        <th>Péntek</th>
-                        <th>Szombat</th>
-                        <th>Vasárnap</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Itt lehetne naptári tartalom -->
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                    </tr>
-                    <!-- további sorok és oszlopok -->
-                </tbody>
-            </table>
+            <div class="day-square">Hétfő<br>Csirke</div>
+            <div class="day-square">Kedd<br>Rizs</div>
+            <div class="day-square">Szerda<br>Barack</div>
+            <div class="day-square">Csütörtök<br>Csípős csirke</div>
+            <div class="day-square">Péntek<br>Barack</div>
+            <div class="day-square">Szombat<br>Osztály fotózás</div>
+            <div class="day-square">Vasárnap<br>Fekete</div>
         </div>
     </section>
 </body>
