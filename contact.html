@@ -81,7 +81,7 @@
     </section>
 
     <script>
-        // Naptár generálása
+          // Naptár generálása
         var tableBody = document.querySelector('#calendar tbody');
         var currentDate = new Date(); // Az aktuális dátum lekérése
         var year = currentDate.getFullYear(); // Az aktuális év lekérése
@@ -94,11 +94,20 @@
             var row = document.createElement('tr');
             for (var j = 0; j < 7; j++) { // Minden sor 7 napot tartalmaz
                 var cell = document.createElement('td');
-                var dayOfMonth = i * 7 + j + 2 - firstDayOfWeek; // Az adott nap számának kiszámítása
+                var dayOfMonth = i * 7 + j + 1 - firstDayOfWeek; // Az adott nap számának kiszámítása
                 if (dayOfMonth > 0 && dayOfMonth <= daysInMonth) {
                     cell.textContent = dayOfMonth;
                 } else {
-                    cell.textContent = ''; // Az üres nap
+                    cell.textContent = ''; // Az üres napok feltöltése
+                }
+                row.appendChild(cell);
+            }
+            tableBody.appendChild(row);
+            if (dayCounter > daysInMonth) break; // Ha elértük a hónap végét, kilépés
+        }
+    </script>
+</body>
+</html>
                
                     
                         
