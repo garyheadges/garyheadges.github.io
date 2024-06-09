@@ -119,6 +119,20 @@
             </tbody>
         </table>
     </section>
-</body>
-</html>
+
+    <script>
+        // Naptár generálása
+        var tableBody = document.querySelector('.calendar-table tbody');
+        var currentDate = new Date();
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth();
+        var daysInMonth = new Date(year, month + 1, 0).getDate();
+        var firstDayOfWeek = new Date(year, month, 1).getDay();
+
+        var dayCounter = 1;
+        for (var i = 0; i < 6; i++) { // Maximum 6 sor
+            var row = document.createElement('tr');
+            for (var j = 0; j < 7; j++) { // Minden sor 7 napot tartalmaz
+                var cell = document.createElement('td
+
 
