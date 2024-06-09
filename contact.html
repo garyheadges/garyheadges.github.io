@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapcsolat</title>
+    <title>Június Naptár</title>
     <style>
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar-table th,
+        .calendar-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            color: white; /* A szövegszín fehérre állítása */
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('/images/kepernyokep.jpg'); /* Háttérkép beállítása */
+            background-image: url('/images/logo-Paramount-Pictures-2002.webp'); /* Háttérkép beállítása */
             background-size: cover; /* A háttérkép mérete igazodik az ablak méretéhez */
             background-position: center; /* A háttérkép középre igazítása */
         }
@@ -38,22 +49,11 @@
         section {
             padding: 2em;
         }
-        .calendar-table {
-            width: 100%;
-            border-collapse: collapse; /* A táblázatkeret összeomlása */
-        }
-        .calendar-table th,
-        .calendar-table td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-            color: white; /* A szövegszín fehérre állítása */
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Kapcsolat</h1>
+        <h1>Június Naptár</h1>
     </header>
     <nav>
         <a href="index.html">Kezdőlap</a>
@@ -62,10 +62,7 @@
         <a href="contact.html">Kapcsolat</a>
     </nav>
     <section>
-        <h2>Június Naptár
-        color:white
-        </h2>
-        <table class="calendar-table">
+        <table class="calendar-table" id="calendar">
             <thead>
                 <tr>
                     <th>Hétfő</th>
@@ -78,47 +75,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Első sor -->
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                </tr>
-                <!-- Második sor -->
-                <tr>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
-                </tr>
-                <!-- Harmadik sor -->
-                <tr>
-                    <td>15</td>
-                    <td>16</td>
-                    <td>17</td>
-                    <td>18</td>
-                    <td>19</td>
-                    <td>20</td>
-                    <td>21</td>
-                </tr>
-                <!-- Negyedik sor -->
-                <tr>
-                    <td>22</td>
-                    <td>23</td>
-                    <td>24</td>
-                    <td>25</td>
-                    <td>26</td>
-                    <td>27</td>
-                    <td>28</td>
-                </tr>
-                <!-- További sorok és oszlopok -->
+                <!-- A JavaScript által generált tartalom itt fog megjelenni -->
             </tbody>
         </table>
     </section>
