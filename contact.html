@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -55,7 +55,7 @@
     <header>
         <h1>Június Naptár</h1>
     </header>
-    <nav> 
+    <nav>
         <a href="index.html">Kezdőlap</a>
         <a href="about.html">Rólunk</a>
         <a href="services.html">Szolgáltatások</a>
@@ -81,7 +81,7 @@
     </section>
 
     <script>
-          // Naptár generálása
+        // Naptár generálása
         var tableBody = document.querySelector('#calendar tbody');
         var currentDate = new Date(); // Az aktuális dátum lekérése
         var year = currentDate.getFullYear(); // Az aktuális év lekérése
@@ -94,11 +94,11 @@
             var row = document.createElement('tr');
             for (var j = 0; j < 7; j++) { // Minden sor 7 napot tartalmaz
                 var cell = document.createElement('td');
-                var dayOfMonth = i * 7 + j + 1 - firstDayOfWeek; // Az adott nap számának kiszámítása
+                var dayOfMonth = i * 7 + j + 2 - firstDayOfWeek; // Az adott nap számának kiszámítása
                 if (dayOfMonth > 0 && dayOfMonth <= daysInMonth) {
                     cell.textContent = dayOfMonth;
                 } else {
-                    cell.textContent = ''; // Az üres napok feltöltése
+                    cell.textContent = ''; // Az üres nap
                 }
                 row.appendChild(cell);
             }
@@ -108,7 +108,6 @@
     </script>
 </body>
 </html>
-               
-                    
+
                         
         
