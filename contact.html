@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -14,15 +14,8 @@
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
-            color: black; /* A szövegszín fehérre állítása */
-         }
-        .today {
-            background-color: red; /* Piros háttérszín a mai naphoz */
-            color: white; /* Fehér szöveg a mai naphoz */
-            font-weight: bold; /* Félkövér betű a mai naphoz */
         }
-        
-        body {
+     body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -55,19 +48,11 @@
         section {
             padding: 2em;
         }
-    </style>
+</style>
 </head>
 <body>
-    <header>
-        <h1>Június Naptár</h1>
-    </header>
-    <nav>
-        <a href="index.html">Kezdőlap</a>
-        <a href="about.html">Rólunk</a>
-        <a href="services.html">Szolgáltatások</a>
-        <a href="contact.html">Kapcsolat</a>
-    </nav>
     <section>
+        <h2>Június Naptár</h2>
         <table class="calendar-table" id="calendar">
             <thead>
                 <tr>
@@ -89,22 +74,29 @@
     <script>
         // Naptár generálása
         var tableBody = document.querySelector('#calendar tbody');
-        var currentDate = new Date(); // Az aktuális dátum lekérése
-        var year = currentDate.getFullYear(); // Az aktuális év lekérése
-        var month = currentDate.getMonth(); // Az aktuális hónap lekérése
-        var daysInMonth = new Date(year, month + 1, 0).getDate(); // A hónapban lévő napok számának lekérése
-        var firstDayOfWeek = new Date(year, month, 1).getDay(); // Az első nap (hét) lekérése a hónapban
+        var currentDate = new Date();
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth();
+        var daysInMonth = new Date(year, month + 1, 0).getDate();
+        var firstDayOfWeek = new Date(year, month, 1).getDay();
+        var currentDay = currentDate.getDate(); // Aktuális nap lekérése
 
         var dayCounter = 1;
         for (var i = 0; i < 6; i++) { // Maximum 6 sor
             var row = document.createElement('tr');
             for (var j = 0; j < 7; j++) { // Minden sor 7 napot tartalmaz
                 var cell = document.createElement('td');
-                var dayOfMonth = i * 7 + j + 2 - firstDayOfWeek; // Az adott nap számának kiszámítása
-                if (dayOfMonth > 0 && dayOfMonth <= daysInMonth) {
-                    cell.textContent = dayOfMonth;
+                if (i === 0 && j < firstDayOfWeek) {
+                    cell.textContent = ''; // Az első sorban előtte levő üres cellák
+                } else if (dayCounter <= daysInMonth) {
+                    cell.textContent = dayCounter;
+                    if (dayCounter === currentDay) { // Ha ez a mai nap, piros háttérszín
+                        cell.style.backgroundColor = 'red';
+                        cell.style.color = 'white';
+                    }
+                    dayCounter++;
                 } else {
-                    cell.textContent = ''; // Az üres nap
+                    cell.textContent = ''; // A hónap után lévő üres cellák
                 }
                 row.appendChild(cell);
             }
@@ -114,6 +106,6 @@
     </script>
 </body>
 </html>
+ 
 
-                        
         
