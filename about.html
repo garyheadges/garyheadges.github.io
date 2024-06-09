@@ -5,15 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rólunk</title>
     <style>
-        body 
-        font-family: Arial, sans-serif;
-        }
-        #calendar {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-          body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0;
@@ -44,11 +36,26 @@
         section {
             padding: 2em;
         }
+        #calendar {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <h1>Google Naptár Integráció</h1>
-    <div id="calendar"></div>
+    <header>
+        <h1>Rólunk</h1>
+    </header>
+    <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </nav>
+    <section>
+        <h2>Google Naptár Integráció</h2>
+        <div id="calendar"></div>
+    </section>
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
         function start() {
@@ -84,3 +91,4 @@
     </script>
 </body>
 </html>
+
