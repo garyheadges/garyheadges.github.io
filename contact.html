@@ -97,6 +97,9 @@
                 var dayOfMonth = i * 7 + j + 2 - firstDayOfWeek; // Az adott nap számának kiszámítása
                 if (dayOfMonth > 0 && dayOfMonth <= daysInMonth) {
                     cell.textContent = dayOfMonth;
+                    if (dayOfMonth === currentDate.getDate()) { // Mai nap kiemelése piros színnel
+                        cell.style.color = 'red';
+                    }
                 } else {
                     cell.textContent = ''; // Az üres nap
                 }
@@ -108,4 +111,3 @@
     </script>
 </body>
 </html>
-
