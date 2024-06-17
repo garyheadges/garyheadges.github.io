@@ -43,18 +43,18 @@
         var tableBody = document.querySelector('#calendar tbody');
         var currentDate = new Date();
         var year = currentDate.getFullYear();
-        var month = currentDate.getMonth();
-        var daysInMonth = new Date(year, month + 1, 0).getDate();
-        var firstDayOfWeek = new Date(year, month, 1).getDay();
-        var currentDay = currentDate.getDate(); // Aktuális nap lekérése
+        var month = currentDate.getMonth() + 1; // Hónap száma (január = 1)
+        var daysInMonth = new Date(year, month, 0).getDate(); // Hónap napjainak száma
+        var firstDayOfWeek = new Date(year, month - 1, 1).getDay(); // Hónap első napjának hét napjának száma
+        var currentDay = currentDate.getDate(); // Az aktuális nap adatainak lekérése
 
         var dayCounter = 1;
-        for (var i = 0; i < 6; i++) { // Maximum 6 sor
+        for (var i = 0; i < 6; i++) { // maximum 6 sor
             var row = document.createElement('tr');
-            for (var j = 0; j < 7; j++) { // Minden sor 7 napot tartalmaz
+            for (var j = 0; j < 7; j++) { // minden sor 7 napot tartalmaz
                 var cell = document.createElement('td');
                 if (i === 0 && j < firstDayOfWeek) {
-                    cell.textContent = ''; // Az első sorban előtte levő üres cellák
+                    cell.textContent = ''; // az első sorban lévő cellák előtt
                 } else if (dayCounter <= daysInMonth) {
                     cell.textContent = dayCounter;
                     if (dayCounter === currentDay) { // Ha ez a mai nap, piros háttérszín
